@@ -1,9 +1,9 @@
 <?php
 // PendaftaranKedinasan.php
-require_once 'Pendaftaran.php';
+require_once __DIR__ . '/Pendaftaran.php';
 
 class PendaftaranKedinasan extends Pendaftaran {
-    // [Tahap 4] Properti Tambahan
+    // [Tahap 4] Properti Tambahan Spesifik Kedinasan
     private $skIkatanDinas;
     private $instansiSponsor;
 
@@ -28,7 +28,7 @@ class PendaftaranKedinasan extends Pendaftaran {
         return "Instansi: " . $this->instansiSponsor . " (No SK: " . $this->skIkatanDinas . ")";
     }
 
-    // [Tahap 4] Metode Query Spesifik
+    // [Tahap 4] Metode Query Spesifik Jalur Kedinasan
     public static function getDaftarKedinasan($db) {
         $query = "SELECT * FROM tabel_pendaftaran WHERE jalur_pendaftaran = 'Kedinasan'";
         $stmt = $db->prepare($query);
